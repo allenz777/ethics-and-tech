@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  *
  * @author 342393436
  */
 public class Question {
     private String questionText;
-    private List<string> options; 
+    private List<String> options; 
 }
