@@ -8,5 +8,6 @@
  * @author 342393436
  */
 public class Question {
-    
+    private String questionText;
+    private 
 }
