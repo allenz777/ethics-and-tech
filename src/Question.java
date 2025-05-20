@@ -27,7 +27,7 @@ public class Question {
         return questionText;
     
     }
-   public String getOptions(){
+   public List<String> getOptions(){
        return options;
 
     }
