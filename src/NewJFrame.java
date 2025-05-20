@@ -36,16 +36,16 @@ public class NewJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addGap(163, 163, 163)
                 .addComponent(jLabel1)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         pack();
