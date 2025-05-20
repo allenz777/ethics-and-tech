@@ -13,4 +13,29 @@ import java.util.ArrayList;
 public class Question {
     private String questionText;
     private List<String> options; 
+    private char correctAnswer; 
+    private String explanation; 
+    
+    public Question(String questionText, List<String> options, char correctAnswer, String explanation){
+        this.questionText = questionText;
+        this.options = options;
+        this.correctAnswer = correctAnswer;
+        this.explanation = explanation; 
+    }
+    
+    public String getQuestionsText(){
+        return questionText;
+    
+    }
+   public String getOptions(){
+       return options;
+
+    }
+    public String getExplanation(){
+        return explanation; 
+    }
+    public boolean isCorrect(char choice){
+        return choice == correctAnswer; 
+    
+    }
 }
