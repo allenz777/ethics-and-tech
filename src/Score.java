@@ -9,5 +9,14 @@
  */
 public class Score {
     private int score;
-    private static final
+    private static final int TOTAL_QUESTIONS;
+    public void addScore(){
+        
+    }
+    public int getFinal(){
+        return score;
+    }
+    public double getPercentage(){
+        
+    } 
 }
