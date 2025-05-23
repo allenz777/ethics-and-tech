@@ -12,12 +12,14 @@ import java.util.Scanner;
 public class menuOptions {
     private List<String> options; 
     
+    public menuOptions(List<String> options){
+        this.options = options; 
+    }
     public void displayOptions(){
         System.out.println("Choose an answer");
-        for(int i =0, i<options.size(); i++){
+        for(int i = 0; i<options.size(); i++){
             System.out.println((i+1)+"");
-            
-    }
+        }
     }
     public int getUserChoice(){
     
