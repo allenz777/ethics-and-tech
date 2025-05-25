@@ -56,7 +56,6 @@ public class quizApp extends javax.swing.JFrame {
         });
 
         opt1.setBackground(new java.awt.Color(255, 51, 51));
-        opt1.setText("A");
         opt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opt1ActionPerformed(evt);
@@ -64,7 +63,6 @@ public class quizApp extends javax.swing.JFrame {
         });
 
         opt2.setBackground(new java.awt.Color(153, 255, 153));
-        opt2.setText("B");
         opt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opt2ActionPerformed(evt);
@@ -72,7 +70,6 @@ public class quizApp extends javax.swing.JFrame {
         });
 
         opt3.setBackground(new java.awt.Color(255, 255, 102));
-        opt3.setText("C");
         opt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opt3ActionPerformed(evt);
@@ -80,7 +77,6 @@ public class quizApp extends javax.swing.JFrame {
         });
 
         opt4.setBackground(new java.awt.Color(153, 204, 255));
-        opt4.setText("D");
         opt4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opt4ActionPerformed(evt);
@@ -180,7 +176,7 @@ public class quizApp extends javax.swing.JFrame {
     
     private void loadNextQuestion(){
         currentQuestion = scenario.getQuestions().get(currentIndex);
-        jTextField1.setText(currentQuestion.getQuestionText());
+        jTextField1.setText(currentQuestion.getQuestionsText());
         List<String> options = currentQuestion.getOptions();
         opt1.setText(options.get(0));
         opt2.setText(options.get(1));
