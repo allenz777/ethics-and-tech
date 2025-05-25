@@ -12,7 +12,7 @@ public class quizApp extends javax.swing.JFrame {
     private Scenarios scenario;
     private Question currentQuestion;
     private int currentIndex = 0;
-    private Score scoreTrack = new Score();
+    public Score scoreTrack = new Score();
     /**
      * Creates new form quizApp
      */

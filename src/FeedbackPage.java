@@ -8,6 +8,8 @@
  * @author Allen Zhang
  */
 public class FeedbackPage extends javax.swing.JFrame {
+    // Declare variables
+    int score = quizApp.scoreTrack;
 
     /**
      * Creates new form FeedbackPage
@@ -28,7 +30,9 @@ public class FeedbackPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         feed = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        back = new javax.swing.JButton();
+        restart = new javax.swing.JButton();
+        getFeed = new javax.swing.JButton();
+        next = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,11 +47,25 @@ public class FeedbackPage extends javax.swing.JFrame {
 
         jLabel2.setText("Here is your feedback based off your score...");
 
-        back.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        back.setText("Back");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        restart.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        restart.setText("Restart");
+        restart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                restartActionPerformed(evt);
+            }
+        });
+
+        getFeed.setText("Get Feedback");
+        getFeed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getFeedActionPerformed(evt);
+            }
+        });
+
+        next.setText("GIVE US YOUR FEEDBACK!");
+        next.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextActionPerformed(evt);
             }
         });
 
@@ -57,25 +75,38 @@ public class FeedbackPage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(back)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1)
-                        .addComponent(feed, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(restart)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(next))
+                    .addComponent(feed, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(getFeed, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addGap(5, 5, 5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(getFeed)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(feed, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(back)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(restart)
+                    .addComponent(next))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -86,9 +117,22 @@ public class FeedbackPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_feedActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_backActionPerformed
+        new Home().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_restartActionPerformed
+
+    private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        // TODO add your handling code here:
+        new userFeedback().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_nextActionPerformed
+
+    private void getFeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getFeedActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_getFeedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,9 +170,11 @@ public class FeedbackPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back;
     private javax.swing.JTextField feed;
+    private javax.swing.JButton getFeed;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton next;
+    private javax.swing.JButton restart;
     // End of variables declaration//GEN-END:variables
 }
