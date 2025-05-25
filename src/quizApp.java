@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.util.List;
 /**
  *
  * @author 342348646
@@ -41,6 +42,9 @@ public class quizApp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private List<scenarios> scenarioList{
+    
+}
     /**
      * @param args the command line arguments
      */
