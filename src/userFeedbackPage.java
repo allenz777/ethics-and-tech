@@ -10,12 +10,12 @@ import java.io.FileWriter;
  *
  * @author Allen Zhang
  */
-public class userFeedback extends javax.swing.JFrame {
+public class userFeedbackPage extends javax.swing.JFrame {
 
     /**
      * Creates new form userFeedback
      */
-    public userFeedback() {
+    public userFeedbackPage() {
         initComponents();
     }
 
@@ -106,7 +106,7 @@ public class userFeedback extends javax.swing.JFrame {
             try{
                 // Declare file writer
                 PrintWriter writer = new PrintWriter(new FileWriter("userFeedback.txt", true));
-                writer.print(userFeedback + "\n"); // Writer in userFeedback.txt file
+                writer.print(userFeedback + "\n"); // Writer in userFeedbackPage.txt file
                 writer.close(); // Close file writer
             } catch (IOException e) {
                 System.err.println("Java Exception " + e);
@@ -144,20 +144,21 @@ public class userFeedback extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(userFeedback.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(userFeedbackPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(userFeedback.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(userFeedbackPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(userFeedback.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(userFeedbackPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(userFeedback.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(userFeedbackPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userFeedback().setVisible(true);
+                new userFeedbackPage().setVisible(true);
             }
         });
     }

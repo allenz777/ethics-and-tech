@@ -125,7 +125,7 @@ public class FeedbackPage extends javax.swing.JFrame {
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         // TODO add your handling code here:
-        new userFeedback().setVisible(true);
+        new userFeedbackPage().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_nextActionPerformed
 
