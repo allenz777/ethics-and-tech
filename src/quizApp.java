@@ -179,6 +179,16 @@ public class quizApp extends javax.swing.JFrame {
 
     
     private void loadNextQuestion(){
+        List<Question> questions = scenario.getQuestions();
+        if (questions.size()==0){
+            jTextField1.setText("No questions");
+            explanation.setText("Please check your scenrio setup");
+            opt1.setEnabled(false);
+            opt2.setEnabled(false);
+            opt3.setEnabled(false);
+            opt4.setEnabled(false);
+            return;
+        }
         currentQuestion = scenario.getQuestions().get(currentIndex);
         jTextField1.setText(currentQuestion.getQuestionsText());
         List<String> options = currentQuestion.getOptions();
