@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class Scenarios {
     private List<Question> questions;
-    
+    List<String> optionList = new ArrayList<>();
     public Scenarios(){
         questions = new ArrayList<>();
         loadFromFile("scenarioQ.txt");
@@ -34,6 +34,14 @@ public class Scenarios {
                 String d = info[4].trim();
                 char answer = info[5].trim().toLowerCase().charAt(0);
                 String explanation = info[6].trim();
+                
+                optionList.add(a);
+                optionList.add(b);
+                optionList.add(c);
+                optionList.add(d);
+                
+                Question q = new Question(question, optionList, answer, explanation);
+                questions.add(q);
             }
         } catch(IOException e){
             

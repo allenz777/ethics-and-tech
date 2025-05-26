@@ -180,7 +180,7 @@ public class quizApp extends javax.swing.JFrame {
     
     private void loadNextQuestion(){
         List<Question> questions = scenario.getQuestions();
-        if (questions.size()==0){
+        if (questions.isEmpty()){
             jTextField1.setText("No questions");
             explanation.setText("Please check your scenrio setup");
             opt1.setEnabled(false);
@@ -241,6 +241,8 @@ public class quizApp extends javax.swing.JFrame {
                 System.err.print("Java Exception " + e);
             }
         }
+
+
     }//GEN-LAST:event_nextActionPerformed
 
     private void explanationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_explanationActionPerformed
