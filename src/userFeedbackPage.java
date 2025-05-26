@@ -31,7 +31,7 @@ public class userFeedbackPage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         userFeed = new javax.swing.JTextField();
-        back = new javax.swing.JButton();
+        restart = new javax.swing.JButton();
         enter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,10 +47,10 @@ public class userFeedbackPage extends javax.swing.JFrame {
             }
         });
 
-        back.setText("Back");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        restart.setText("Restart");
+        restart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                restartActionPerformed(evt);
             }
         });
 
@@ -71,8 +71,8 @@ public class userFeedbackPage extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(restart, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(294, 294, 294)
                         .addComponent(enter, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(userFeed))
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -88,7 +88,7 @@ public class userFeedbackPage extends javax.swing.JFrame {
                 .addComponent(userFeed, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(back)
+                    .addComponent(restart)
                     .addComponent(enter))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
@@ -121,11 +121,11 @@ public class userFeedbackPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userFeedActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
         // TODO add your handling code here:
-        new FeedbackPage().setVisible(true);
+        new Home().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_backActionPerformed
+    }//GEN-LAST:event_restartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,10 +164,10 @@ public class userFeedbackPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton back;
     private javax.swing.JButton enter;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton restart;
     private javax.swing.JTextField userFeed;
     // End of variables declaration//GEN-END:variables
 }
