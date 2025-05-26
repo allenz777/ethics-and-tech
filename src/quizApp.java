@@ -3,12 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 /**
  *
  * @author 342348646
  */
 public class quizApp extends javax.swing.JFrame {
+    int count = 0;
     private Scenarios scenario;
     private Question currentQuestion;
     private int currentIndex = 0;
@@ -187,6 +191,7 @@ public class quizApp extends javax.swing.JFrame {
     
     private void handleAnswer(char selected){
         if(currentQuestion.isCorrect(selected)){
+            count++;
             scoreTrack.addScore();
             explanation.setText("Correct! " + currentQuestion.getExplanation());
         } else {
@@ -217,6 +222,14 @@ public class quizApp extends javax.swing.JFrame {
             opt2.setEnabled(true);
             opt3.setEnabled(true);
             opt4.setEnabled(true);
+        } else {
+            try{
+                PrintWriter writer = new PrintWriter(new FileWriter("scoreData.txt", true));
+                writer.println(count);
+                writer.close();
+            } catch (IOException e){
+                System.err.print("Java Exception " + e);
+            }
         }
     }//GEN-LAST:event_nextActionPerformed
 

@@ -1,3 +1,8 @@
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,8 +13,6 @@
  * @author Allen Zhang
  */
 public class FeedbackPage extends javax.swing.JFrame {
-    // Declare variables
-    int score = quizApp.scoreTrack;
 
     /**
      * Creates new form FeedbackPage
@@ -131,9 +134,29 @@ public class FeedbackPage extends javax.swing.JFrame {
 
     private void getFeedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getFeedActionPerformed
         // TODO add your handling code here:
+        String score = getScore(1);
+        
         
     }//GEN-LAST:event_getFeedActionPerformed
 
+    private String getScore(int lineCount){
+        // Try-catch statement
+        String info = "";
+         try{
+            Scanner fileInput = new Scanner(new File("scoreData.txt"));
+            while(fileInput.hasNext()){
+                info = fileInput.nextLine(); 
+            }
+        } catch (IOException e){
+            System.err.println("Java Exception: " + e);
+        } catch (StringIndexOutOfBoundsException f) {
+            System.err.println("Java Exception: " + f);
+        }
+        return info;
+    }   
+    
+    
+    
     /**
      * @param args the command line arguments
      */
