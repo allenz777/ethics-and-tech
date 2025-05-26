@@ -237,6 +237,10 @@ public class quizApp extends javax.swing.JFrame {
                 PrintWriter writer = new PrintWriter(new FileWriter("scoreData.txt", true));
                 writer.println(count);
                 writer.close();
+                finalScorePage p = new finalScorePage();
+                p.setFinalScore(count);
+                p.setVisible(true);
+                this.setVisible(false);
             } catch (IOException e){
                 System.err.print("Java Exception " + e);
             }
