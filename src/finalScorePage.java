@@ -87,6 +87,7 @@ public class finalScorePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    // Sets the final score
     public void setFinalScore(Score score){
         finalScore.setText(score.toString());
     }
