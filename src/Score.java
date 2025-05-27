@@ -30,6 +30,6 @@ public class Score {
      
     @Override
     public String toString(){
-        return "Your final score is: " + score;
+        return "Your final score is: " + score + "/10";
     }
 }
