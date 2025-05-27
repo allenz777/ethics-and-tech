@@ -17,6 +17,7 @@ public class quizApp extends javax.swing.JFrame {
     private Question currentQuestion;
     private static int currentIndex = 0;
     Score scoreTrack = new Score();
+    
     /**
      * Creates new form quizApp
      */
@@ -147,9 +148,11 @@ public class quizApp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    // Loads next question
     private void loadNextQuestion(){
+        // Get list of questions from scenario object
         List<Question> questions = scenario.getQuestions();
+        // If no questions found, show nothing
         if (questions.isEmpty()){
             jTextField1.setText("No questions");
             explanation.setText("Please check your scenrio setup");
@@ -159,9 +162,14 @@ public class quizApp extends javax.swing.JFrame {
             opt4.setEnabled(false);
             return;
         }
+        
+        // Gets current question from the list
         currentQuestion = scenario.getQuestions().get(currentIndex);
+        // Display the question text in text field
         jTextField1.setText(currentQuestion.getQuestionsText());
+        // Gets the list of options for current question
         List<String> options = currentQuestion.getOptions();
+        // Set each multiple choice option
         opt1.setText(options.get(0));
         opt2.setText(options.get(1));
         opt3.setText(options.get(2));
@@ -169,14 +177,23 @@ public class quizApp extends javax.swing.JFrame {
         explanation.setText("");
     }
     
+    /**
+     * Checks if selected answer is correct
+     * @param selected The selected answer
+     */
     private void handleAnswer(char selected){
         if(currentQuestion.isCorrect(selected)){
             count++;
+            // Add to score tracker
             scoreTrack.addScore();
+            
+            // Display message depending on if answer is correct
             explanation.setText("Correct! " + currentQuestion.getExplanation());
         } else {
             explanation.setText("Incorrect. " + currentQuestion.getExplanation());
         }
+        
+        // Enable next button and disable all other options
         next.setEnabled(true);
         opt1.setEnabled(false);
         opt2.setEnabled(false);
@@ -194,9 +211,14 @@ public class quizApp extends javax.swing.JFrame {
     }//GEN-LAST:event_opt2ActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        // Moves on next question
         currentIndex++;
+        
+        // If there are more questions
         if(currentIndex < scenario.getQuestions().size()){
+            // Loads next question
             loadNextQuestion();
+            // Disables next button and makes user pick an option
             next.setEnabled(false);
             opt1.setEnabled(true);
             opt2.setEnabled(true);
@@ -204,9 +226,12 @@ public class quizApp extends javax.swing.JFrame {
             opt4.setEnabled(true);
         } else {
             try{
+                // Write the final score into a txt file
                 PrintWriter writer = new PrintWriter(new FileWriter("scoreData.txt", true));
                 writer.println(count);
                 writer.close();
+                
+                // Open final score page to display user's score
                 finalScorePage p = new finalScorePage();
                 p.setFinalScore(scoreTrack);
                 p.setVisible(true);
