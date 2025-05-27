@@ -15,7 +15,7 @@ public class quizApp extends javax.swing.JFrame {
     int count = 0;
     private Scenarios scenario;
     private Question currentQuestion;
-    private int currentIndex = 0;
+    private static int currentIndex = 0;
     Score scoreTrack = new Score();
     /**
      * Creates new form quizApp

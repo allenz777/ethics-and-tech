@@ -23,6 +23,17 @@ public class Question {
         this.explanation = explanation; 
     }
     
+    public Question(String question){
+        this.questionText = question;
+        this.options = new ArrayList<>();
+        options.add("A");
+        options.add("B");
+        options.add("C");
+        options.add("D");
+        this.correctAnswer = 'A';
+        this.explanation = "N/A";
+    }
+    
     public String getQuestionsText(){
         return questionText;
     
