@@ -85,8 +85,8 @@ public class finalScorePage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public void setFinalScore(int score){
-        finalScore.setText("Your final score is: " + score);
+    public void setFinalScore(Score score){
+        finalScore.setText(score.toString());
     }
     private void finalScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalScoreActionPerformed
         // TODO add your handling code here:

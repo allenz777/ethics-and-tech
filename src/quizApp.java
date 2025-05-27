@@ -224,7 +224,7 @@ public class quizApp extends javax.swing.JFrame {
                 writer.println(count);
                 writer.close();
                 finalScorePage p = new finalScorePage();
-                p.setFinalScore(count);
+                p.setFinalScore(scoreTrack);
                 p.setVisible(true);
                 this.setVisible(false);
             } catch (IOException e){

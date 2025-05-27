@@ -49,4 +49,10 @@ public class Question {
         return choice == correctAnswer; 
     
     }
+    public boolean isCorrect(String choice){
+        if (choice == null|| choice.isEmpty()){
+            return false;
+        }
+        return choice.charAt(0) == correctAnswer;
+    }
 }

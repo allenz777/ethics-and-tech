@@ -23,4 +23,8 @@ public class Score {
         return percent;
         
     } 
+    @Override
+    public String toString(){
+        return "Your final score is: " + score;
+    }
 }
