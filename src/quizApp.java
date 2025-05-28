@@ -11,11 +11,11 @@ import java.util.List;
  *
  * @author 342348646
  */
-public class quizApp extends javax.swing.JFrame {
+public class quizApp extends quizPage {
     int count = 0;
     private Scenarios scenario;
     private Question currentQuestion;
-    private static int currentIndex = 0;
+    
     Score scoreTrack = new Score();
     
     /**
@@ -160,29 +160,29 @@ public class quizApp extends javax.swing.JFrame {
             opt2.setEnabled(false);
             opt3.setEnabled(false);
             opt4.setEnabled(false);
-            return;
+            
         }
-        
-        // Gets current question from the list
-        currentQuestion = scenario.getQuestions().get(currentIndex);
-        // Display the question text in text field
-        jTextField1.setText(currentQuestion.getQuestionsText());
-        // Gets the list of options for current question
-        List<String> options = currentQuestion.getOptions();
-        // Set each multiple choice option
-        opt1.setText(options.get(0));
-        opt2.setText(options.get(1));
-        opt3.setText(options.get(2));
-        opt4.setText(options.get(3));
-        explanation.setText("");
+        else{
+            // Gets current question from the list
+            currentQuestion = questions.get(getCurrentIndex());
+            // Display the question text in text field
+            jTextField1.setText(currentQuestion.getQuestionsText());
+            // Gets the list of options for current question
+            List<String> options = currentQuestion.getOptions();
+            // Set each multiple choice option
+            opt1.setText(options.get(0));
+            opt2.setText(options.get(1));
+            opt3.setText(options.get(2));
+            opt4.setText(options.get(3));
+            explanation.setText("");
+        }
     }
-    
     /**
      * Checks if selected answer is correct
      * @param selected The selected answer
      */
     private void handleAnswer(char selected){
-        if(currentQuestion.isCorrect(selected)){
+        if(Question.isCorrect(selected, currentQuestion.getCorrectAnswer())){
             count++;
             // Add to score tracker
             scoreTrack.addScore();
@@ -211,11 +211,10 @@ public class quizApp extends javax.swing.JFrame {
     }//GEN-LAST:event_opt2ActionPerformed
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
-        // Moves on next question
-        currentIndex++;
-        
         // If there are more questions
-        if(currentIndex < scenario.getQuestions().size()){
+        if(currentIndex + 1 < scenario.getQuestions().size()){
+            // Moves on next question
+            addIndex();
             // Loads next question
             loadNextQuestion();
             // Disables next button and makes user pick an option

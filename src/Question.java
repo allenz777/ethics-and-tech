@@ -66,26 +66,35 @@ public class Question {
     }
     
     /**
-     * Checks if a given character is the correct answer.
-     *
-     * @param choice the answer choice as a character
-     * @return true if the choice matches the correct answer; false otherwise
+     * Gets the correct answer
+     * 
+     * @return the correct answer
      */
-    
-    public boolean isCorrect(char choice){
-        return choice == correctAnswer; 
+    public char getCorrectAnswer(){
+        return correctAnswer;
     }
     
     /**
-     * Checks if a given character is the correct answer.
-     *
-     * @param choice the answer choice as a string
+     * Checks if the answer is correct
+     * 
+     * @param selected the selected answer
+     * @param correctAnswer the correct answer
+     * @return set them equal to each other
+     */
+    public static boolean isCorrect(char selected, char correctAnswer){
+        return Character.toLowerCase(selected) == Character.toLowerCase(correctAnswer);
+    }
+    
+    /**
+     * Checks if given character is correct
+     * 
+     * @param selected the answer choice
      * @return true if the choice matches the correct answer; false otherwise
      */
-    public boolean isCorrect(String choice){
-        if (choice == null|| choice.isEmpty()){
+    public boolean isCorrect(String selected){
+        if(selected == null || selected.isEmpty()){
             return false;
         }
-        return choice.charAt(0) == correctAnswer;
+        return selected.charAt(0) == correctAnswer;  
     }
 }
