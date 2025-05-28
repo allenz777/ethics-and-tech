@@ -10,7 +10,7 @@ import java.io.FileWriter;
  *
  * @author Allen Zhang
  */
-public class userFeedbackPage extends javax.swing.JFrame {
+public class userFeedbackPage extends quizPage {
 
     /**
      * Creates new form userFeedback
@@ -131,7 +131,8 @@ public class userFeedbackPage extends javax.swing.JFrame {
 
     private void restartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartActionPerformed
         // TODO add your handling code here:
-        new Home().setVisible(true);
+        resetQuiz();
+        new quizApp().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_restartActionPerformed
 
