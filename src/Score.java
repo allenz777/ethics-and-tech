@@ -27,7 +27,11 @@ public class Score {
     public int getFinal(){
         return score;
     }
-     
+    
+    /**
+     * Writes it into string
+     * @return the score
+     */
     @Override
     public String toString(){
         return "Your final score is: " + score + "/10";

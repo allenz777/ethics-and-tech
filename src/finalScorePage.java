@@ -100,7 +100,10 @@ public class finalScorePage extends quizPage {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    // Sets the final score
+    /**
+     * Sets the score
+     * @param score the score
+     */
     public void setFinalScore(Score score){
         finalScore.setText(score.toString());
     }
@@ -115,7 +118,9 @@ public class finalScorePage extends quizPage {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        // Resets quiz mark
         resetQuiz();
+        // Makes quizApp visible
         new quizApp().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_resetActionPerformed
