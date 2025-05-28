@@ -12,11 +12,10 @@ import java.util.List;
  * @author 342348646
  */
 public class quizApp extends quizPage {
-    int count = 0;
+    private int count = 0;
     private Scenarios scenario;
     private Question currentQuestion;
-    
-    Score scoreTrack = new Score();
+    private Score scoreTrack = new Score();
     
     /**
      * Creates new form quizApp
